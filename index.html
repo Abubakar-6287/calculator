@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <link rel="stylesheet" href="calculator.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>calculator</title>
+</head>
+<body>
+ <div class="container">
+    
+ <div class="calculator">
+ <input type="text" id="textinput" placeholder="CalculatinG" >
+</div>
+<div>
+ <button class="button opreators ac all" onclick="clearResult()">AC</botton>
+ <button class="button opreators del all" onclick="deleteResult()">DEL</botton>
+ <button class="button opreators b all" onclick="insertValue('%')">%</botton>
+ <button class="button opreators b all" onclick="insertValue('/')">/</botton>
+</div>
+<div> 
+  <button class="button" onclick="insertValue('1')">1</botton>
+  <button class="button" onclick="insertValue('2')">2</botton>
+  <button class="button" onclick="insertValue('3')">3</botton>
+  <button class="button opreators g b all" onclick="insertValue('*')">*</botton>
+</div>
+<div>
+    <button class="button" onclick="insertValue('4')">4</botton>
+    <button class="button" onclick="insertValue('5')">5</botton>
+    <button class="button" onclick="insertValue('6')">6</botton>
+    <button class="button opreators b m all" onclick="insertValue('-')">-</botton>
+</div>
+<div>
+    <button class="button" onclick="insertValue('7')">7</botton>
+    <button class="button" onclick="insertValue('8')">8</botton>
+    <button class="button" onclick="insertValue('9')">9</botton>
+    <button class="button opreators b p all" onclick="insertValue('+')">+</botton>
+</div>
+<div>
+    <button class="button ziro" onclick="insertValue('00')">00</botton>
+    <button class="button" onclick="insertValue('0')">0</botton>
+    <button class="button dot" onclick="insertValue('.')">.</botton>
+    <button class="button opreators equal" onclick="calculate()">=</botton>
+</div>
+</div>
+<script >
+    let result = document.getElementById("textinput");
+function insertValue(value){
+result.value += value;
+}
+function clearResult(){
+    result.value = "";
+}
+function deleteResult(){
+    result.value = result.value.slice(0, -1)
+}
+function calculate(){
+    try{
+        result.value = eval(result.value);
+    }
+    catch(arror){
+        result.value = "arror";
+    }
+}
+</script>
+
+</body>
+</html>
