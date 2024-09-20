@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<head>
+    
+    <link rel="stylesheet" href="calculator.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></i>Calculator</title>
+
+
+</head>  
+<body>
+
+
+ <div class="container">
+    <h3 id="abu">Abu<span id="s">bakaR</span>  <i class="fa-solid fa-calculator"></h3>
+    <div class="calculator">
+ <input type="text" id="textinput" placeholder="AbubakaR" >
+</div>
+<div>
+ <button  onclick="Ac()" class="opreators ac all">AC</botton>
+ <button  onclick="del()" class="opreators del all">DEL</botton>
+ <button  onclick="insertvalue('%')" class="opreators b all">%</botton>
+ <button  onclick="insertvalue('/')" class="opreators b all">/</botton>
+</div>
+<div> 
+  <button  onclick="insertvalue('1')">1</botton>
+  <button  onclick="insertvalue('2')">2</botton>
+  <button  onclick="insertvalue('3')">3</botton>
+  <button  onclick="insertvalue('*')" class=" opreators g b all">*</botton>
+</div> 
+<div>
+    <button  onclick="insertvalue('4')">4</botton>
+    <button  onclick="insertvalue('5')">5</botton>  
+    <button  onclick="insertvalue('6')">6</botton>
+    <button  onclick="insertvalue('-')" class=" opreators b m all">-</botton>
+</div>
+<div>
+    <button  onclick="insertvalue('7')">7</botton>
+    <button  onclick="insertvalue('8')">8</botton>
+    <button  onclick="insertvalue('9')">9</botton>
+    <button  onclick="insertvalue('+')" class=" opreators b p all">+</botton>
+</div>
+<div>
+    <button  onclick="insertvalue('00')">00</botton>
+    <button  onclick="insertvalue('0')">0</botton>
+    <button  onclick="insertvalue('.')">&#8729;</botton>
+    <button class=" opreators equal" onclick="calculate()">&#8776;</botton>
+</div>
+</div>
+<script>
+    let result = document.getElementById('textinput')
+       function insertvalue (value){
+        result.value += value
+       }
+       function Ac (){
+        result.value = ""
+       }
+      function del(){
+        result.value = result.value.slice(0, -1)
+      }
+      function calculate (){
+        try{
+            result.value=eval(result.value)
+        }
+        catch(error){
+            result.value = "false"
+        }
+      }
+    
+        </script>
+</body>
+</html>

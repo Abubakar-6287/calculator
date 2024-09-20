@@ -1,16 +1,25 @@
+
 *{
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: "roboto", sans-serif;
+    font-family: "roboto", sans-serif;  
 }
 
 body{
-    width: 100%;
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%;
     height: 100vh;
     justify-content: center;
-    align-items: center;
-    background: #79b179;
+    align-items: center; */
+    background: linear-gradient(to top right,red 50%,blue 50%);
     perspective: 500px;
 }
 
@@ -18,59 +27,84 @@ body{
     outline: 7px solid black;
     padding: 20px;
     border-radius: 16px;
-/*     background:  #91a791; */
-    background-image: url(Pictures/dost.jpg);
+    background:  #508991;
+    /* background-image: url(Pictures/dost/dost.jpg); */
     background-size: cover;
     box-shadow: 25px 25px 25px rgba(0, 0, 0, 0.5),
     0px -15px 25px rgba(0, 0, 0, 0.5);
     width: 320px;
-    height: 540px;
+    height: 560px;
     margin: 5% auto;
     box-sizing: border-box;
     overflow: hidden;
     /* position: relative; */
 }
-@media (width >=300px) and (width <=768px){
-    .container{
-        
-    }
+.calculator{
+    /* background-color: red; 
+    margin-top: 50px; */
 }
 #textinput{
     width:280px;
-    height: 70px;
+    height: 90px;
     border: none;
     border-radius: 10px;
     padding: 0px 5px 0px 5px;
-    margin: 15px 0px 40px 0px;
+    margin: 10px 0px 40px 0px;
     background: #00fffffa;
     /* cursor: pointer; */
     color: rgb(0, 0, 0);
     text-align: right;
     /* float: left; */
     font-size: 60px;
-    box-shadow: 6px -6px 15px #000000e7,
-    -6px -12px 12px #15161380,0px 1px 8px #7f5a5a;
+    box-shadow: 0px -10px 15px #000000e7,
+    -0px -12px 12px #15161380,0px 1px 8px #7f5a5a;
     font-stretch: 80%;
     font-weight: bold;
     overflow-y: visible;
-    outline: 3px solid yellow; animation: cal 12s linear  infinite ;
-    
+    outline: 3px solid #ffff00; 
+    animation: cal 12s linear  infinite ;
+    border: none;
+    transform:perspective(600px)rotatex(-10deg);
+    text-shadow: 2px 5px 2px #000000;
 }
+#abu{
+    position: relative;
+    top: -15px;
+    left: -15px;
+    color: white;
+    font-family:cursive;
+    background-color: red;
+    width: 42px; height: 24px;
+    border-radius: 20px 20px 0px 0px;
+    /* border-bottom: 2px solid #25ffe2; */
+    border-left: 3px solid red;
+    text-shadow: 3px 2px 0px #000000;
+}
+#s{
+    /* margin-left: 5px;
+    padding: -25px; */
+    color: #78fff4;
+    position: absolute;
+    top: 5.2px;
+    left: 40px;
+    text-shadow: 2px 2px 0px #da0000;
+}
+
 #textinput::selection{
     background-color: rgb(177, 0, 0);
     color: white;
 }
 
 #textinput::placeholder{
-    color: #313030;
-    font-size: 58px;
-    opacity: 0.18;
+    color: #000000;
+    font-size: 50px;
+    opacity: 0.19;
     font-stretch: 50%;
     /* padding-right:92px ; */
-    transform:rotate(-5deg);
+    transform:rotate(-7deg);
     text-align: center;
     /* user-select: none; */
-   
+    font-family:Georgia, 'Times New Roman', Times, serif;
 }
 @keyframes cal {
     0%{
@@ -78,6 +112,9 @@ body{
     }
     50%{
         color: #0000af;
+    }
+    70%{
+        color: #ff0000;
     }
     100%{
         color: #b6b900;
@@ -91,7 +128,7 @@ button{
     font-size: 22px;
     font-weight: bold;
     border-radius: 20%;
-    background: transparent;
+    background:linear-gradient(to top right ,aqua,#aa0303 ,green);
     color: #daff07;
     box-shadow: -5px -4px 8px rgba(21, 22, 19, 0.5),
                   8px 5px 8px rgba(21, 22, 19, 0.5);
@@ -99,7 +136,9 @@ button{
     outline:  2px solid white;
 }
 button:hover{
-    background:linear-gradient(#aebeae , #1516134d);
+    text-shadow: 2px 2px 0px black;
+    background:linear-gradient(#2516ff , #d2ff78a9);
+    outline: 2px solid yellow;
 }
 .opreators{
     color: rgb(104, 255, 255);
@@ -118,15 +157,14 @@ button:hover{
                   6px 3px 5px rgba(0, 0, 0);
     margin-top: -1px;
     outline: 2px solid white;
-  
 }
 .equal:hover{
     background: linear-gradient(to left top, purple, pink,orange);
-    outline: 2px solid black;
+    outline: 2px solid rgb(255, 0, 0);
 }
-.del ,.b ,.s ,.ac{
+.del ,.ac{
     font-size: 19px;
-    background: rgb(89, 0, 0);
+    background: linear-gradient(to top left,#ff0000c4 ,#fffb1a);
     letter-spacing: 2px;
 }
 
@@ -135,7 +173,9 @@ button:hover{
     background: rgb(0, 0, 0);
     height: 55px;
 }
-
+.b{
+    background:  #4e0ba7;
+}
 .button:active{
     opacity: 1;
     background: linear-gradient(to bottom right, #03bdbd ,#524d4d);
@@ -166,11 +206,14 @@ button:hover{
 }
 .ziro{
     background-color: #9494af;
+    color: red;
 }
 .dot{
     background-color: #9494b4;
+    color: red;
 }
 .del{
     font-size: 18px;
     letter-spacing: 1px;
 }
+
